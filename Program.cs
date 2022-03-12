@@ -16,7 +16,7 @@ namespace Mod3
     {
         public enum State { Tengkurap, Jongkok, Berdiri, Terbang}
         public enum Trigger { TombolW, TombolS, TombolX}
-        public State currentState;
+        private State currentState;
 
         public PosisiKarakterGame()
         {
@@ -77,6 +77,11 @@ namespace Mod3
                 Console.WriteLine("tombol arah atas ditekan");
             }
         }
+
+        public State getCurrentState()
+        {
+            return currentState;
+        }
     }
 
     class Program
@@ -89,35 +94,36 @@ namespace Mod3
             Console.WriteLine($"Kode apel\t: {KodeBuah.getKodeBuah(KodeBuah.Buah.Apel)}");
             Console.WriteLine($"Kode anggur\t: {KodeBuah.getKodeBuah(KodeBuah.Buah.Anggur)}");
 
+            Console.WriteLine();
             Console.WriteLine("Contoh menjalankan kelas PosisiKarakterGame menggunakan konsep state-based dengan posisi default terbang");
 
             Console.WriteLine("1. Tekan S");
             karakter.activateTrigger(PosisiKarakterGame.Trigger.TombolS);
-            Console.WriteLine($"Current state: {karakter.currentState}");
+            Console.WriteLine($"Current state: {karakter.getCurrentState()}");
 
             Console.WriteLine("2. Tekan W");
             karakter.activateTrigger(PosisiKarakterGame.Trigger.TombolW);
-            Console.WriteLine($"Current state: {karakter.currentState}");
+            Console.WriteLine($"Current state: {karakter.getCurrentState()}");
 
             Console.WriteLine("3. Tekan X");
             karakter.activateTrigger(PosisiKarakterGame.Trigger.TombolX);
-            Console.WriteLine($"Current state: {karakter.currentState}");
+            Console.WriteLine($"Current state: {karakter.getCurrentState()}");
 
             Console.WriteLine("4. Tekan S");
             karakter.activateTrigger(PosisiKarakterGame.Trigger.TombolS);
-            Console.WriteLine($"Current state: {karakter.currentState}");
+            Console.WriteLine($"Current state: {karakter.getCurrentState()}");
 
             Console.WriteLine("5. Tekan W");
             karakter.activateTrigger(PosisiKarakterGame.Trigger.TombolW);
-            Console.WriteLine($"Current state: {karakter.currentState}");
+            Console.WriteLine($"Current state: {karakter.getCurrentState()}");
 
             Console.WriteLine("6. Tekan W");
             karakter.activateTrigger(PosisiKarakterGame.Trigger.TombolW);
-            Console.WriteLine($"Current state: {karakter.currentState}");
+            Console.WriteLine($"Current state: {karakter.getCurrentState()}");
 
             Console.WriteLine("7. Tekan S");
             karakter.activateTrigger(PosisiKarakterGame.Trigger.TombolS);
-            Console.WriteLine($"Current state: {karakter.currentState}");
+            Console.WriteLine($"Current state: {karakter.getCurrentState()}");
         }
     }
 }
